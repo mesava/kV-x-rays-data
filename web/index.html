@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kV-рентген: данные TRS-398</title>
+<meta name="description" content="Факторы обратного рассеяния и отношения массовых коэффициентов поглощения энергии вода/воздух для дозиметрии kV-рентгена по TRS-398 Rev.1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>Дозиметрия kV-рентгена по TRS-398</h1>
+    <p class="lede">Факторы обратного рассеяния B<sub>w</sub> и отношения [μ<sub>en</sub>/ρ]<sub>w,air</sub> для рентгена низких и средних энергий. Данные — P. Andreo (Phys. Med. Biol. 2019), те же, что в веб-приложении МАГАТЭ.</p>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="routes" aria-label="Выбор расчёта">
+    <section class="route">
+      <h2>Камера откалибрована по воздушной керме в свободном воздухе</h2>
+      <button class="tab" data-calc="BmuenAl" aria-pressed="true">
+        <span class="tab-title">Низкие энергии, воздушный метод</span>
+        <span class="tab-sub">B<sub>w</sub> и [μ<sub>en</sub>/ρ]<sup>FIA</sup>, 10–150 кВ, СПО в мм Al</span>
+      </button>
+      <button class="tab" data-calc="muen2Cu" aria-pressed="false">
+        <span class="tab-title">Средние энергии, глубина 2 см</span>
+        <span class="tab-sub">[μ<sub>en</sub>/ρ]<sup>z=2</sup>, 70–300 кВ, СПО в мм Cu</span>
+      </button>
+      <button class="tab" data-calc="BmuenCu" aria-pressed="false">
+        <span class="tab-title">Средние энергии, воздушный метод</span>
+        <span class="tab-sub">не рекомендован TRS-398, данные неполные</span>
+      </button>
+    </section>
+    <section class="route">
+      <h2>Камера откалибрована по поглощённой дозе в воде</h2>
+      <button class="tab" data-calc="kgBwAl" aria-pressed="false">
+        <span class="tab-title">Низкие энергии, поправка на геометрию</span>
+        <span class="tab-sub">k<sup>PMMA</sup><sub>Q,g</sub>, поверхность фантома, СПО в мм Al</span>
+      </button>
+      <button class="tab" data-calc="kgmuen2Cu" aria-pressed="false">
+        <span class="tab-title">Средние энергии, поправка на геометрию</span>
+        <span class="tab-sub">k<sup>z=2</sup><sub>Q,g</sub>, глубина 2 см, СПО в мм Cu</span>
+      </button>
+    </section>
+  </nav>
+
+  <main id="main">
+    <form id="inputs" class="inputs" autocomplete="off" novalidate></form>
+    <section id="result" class="result" aria-live="polite"></section>
+  </main>
+</div>
+
+<footer class="about" id="about">
+  <h2>Что это и откуда числа</h2>
+  <p>Неофициальный русскоязычный аналог приложения МАГАТЭ <a href="https://kvx-rays.iaea.org/About">kvx-rays.iaea.org</a>, на которое ссылается TRS-398 Rev.1. Расчёт идёт полностью в браузере и работает без интернета.</p>
+  <p>Данные: таблицы C1–C11 из Supplementary Data к статье P. Andreo, <i>Data for the dosimetry of low- and medium-energy kV x rays</i>, Phys. Med. Biol. 64 (2019) 205019, <a href="https://doi.org/10.1088/1361-6560/ab421d">doi:10.1088/1361-6560/ab421d</a>. Между узлами таблиц значения интерполируются; на контрольных точках результат совпадает с сайтом МАГАТЭ в узлах до 4-го знака, между узлами — не хуже 0,0005.</p>
+  <p>Неопределённость самих данных: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (стандартная, k = 1).</p>
+  <p class="disclaimer">Перед клиническим применением сверьте результат с официальным приложением МАГАТЭ. Ответственность за дозиметрию несёт медицинский физик.</p>
+</footer>
+
+<template id="tpl-field">
+  <div class="field">
+    <label class="field-label"></label>
+    <div class="field-controls">
+      <input class="num" type="number" inputmode="decimal">
+      <span class="unit"></span>
+      <input class="range" type="range" tabindex="-1" aria-hidden="true">
+    </div>
+    <p class="field-hint"></p>
+  </div>
+</template>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+name: Тесты и сборка
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Сверка с контрольными точками МАГАТЭ
+        run: npm test
+      - name: Собранный docs/index.html соответствует исходникам
+        run: |
+          npm run build
+          git diff --exit-code docs/index.html || (echo "Выполните npm run build и закоммитьте docs/index.html" && exit 1)
