@@ -2,6 +2,8 @@
 
 Калькулятор дозиметрических величин для рентгеновского излучения низких и средних энергий (10–300 кВ) по международным практическим рекомендациям **МАГАТЭ TRS-398 Rev.1**. Это неофициальный двуязычный (русский и английский) аналог веб-приложения МАГАТЭ [kvx-rays.iaea.org](https://kvx-rays.iaea.org/About), на которое ссылается сам TRS-398 Rev.1. Калькулятор согласуется с TRS-398 Rev.1.
 
+**Калькулятор онлайн: https://mesava.github.io/kV-x-rays-data/** · English version: the same link, button «English».
+
 **Для кого:** медицинские физики, которые выполняют стандартную дозиметрию аппаратов близкофокусной и ортовольтной рентгенотерапии.
 
 **Зачем:** TRS-398 Rev.1 рекомендует брать факторы обратного рассеяния и отношения коэффициентов поглощения энергии из данных P. Andreo, а для расчёта — пользоваться веб-приложением МАГАТЭ. Этот проект даёт то же самое:
@@ -28,7 +30,9 @@
 
 ## Как пользоваться
 
-Откройте файл [`docs/index.html`](docs/index.html) в любом современном браузере: скачайте его и откройте двойным щелчком. Интернет не нужен.
+**Онлайн:** откройте https://mesava.github.io/kV-x-rays-data/ в любом современном браузере, в том числе на телефоне.
+
+**Без интернета:** скачайте файл [`docs/index.html`](docs/index.html) и откройте его двойным щелчком. Всё работает так же: данные и расчёт встроены в файл.
 
 Слева выберите расчёт, введите параметры пучка. Результат пересчитывается сразу. Язык переключается кнопками «Русский / English» в шапке; при первом открытии он выбирается по языку браузера и дальше запоминается. Адрес страницы меняется вместе с параметрами и языком: такую ссылку можно сохранить или переслать, и расчёт откроется с теми же значениями.
 
@@ -89,6 +93,8 @@
 
 ```
 docs/index.html            готовый калькулятор одним файлом (собирается автоматически)
+index.html                 перенаправление с короткого адреса GitHub Pages на docs/
+data/README.md             условия использования данных
 web/                       исходники интерфейса: index.html, style.css, app.js
 web/i18n.js                все тексты интерфейса на русском и английском
 src/kvx.js                 модуль расчёта: интерполяция, B_w, μ_en, k_Q,g, проверки
@@ -121,21 +127,31 @@ pdftotext "Data tables ....pdf" tables.txt
 python tools/parse_andreo_tables.py tables.txt data/andreo2019.json
 ```
 
-## Правовой статус
+## Правовой статус и условия использования
 
 Числовые данные взяты из Supplementary Data к статье в Phys. Med. Biol. (IOP Publishing).
 
-1 октября 2026 г. P. Andreo письменно согласился на использование его данных в калькуляторе и пообещал передать подробные числовые файлы веб-приложения при условии:
+1 октября 2026 г. автор данных P. Andreo разрешил использовать их в этом калькуляторе и публиковать калькулятор. Условия разрешения:
 
-- данные используются **только в некоммерческих целях** — ни напрямую, ни через передачу файлов третьим лицам для коммерческого использования; это подтверждается подписанным письмом автора калькулятора;
-- источник данных указан явно: *P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019*; желательно также указать, что калькулятор согласуется с TRS-398 Rev.1.
+- данные используются **только в некоммерческих целях** — ни напрямую, ни через передачу файлов кому-либо для коммерческого использования; автор калькулятора подтвердил это подписанной декларацией;
+- источник данных указывается явно: *P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019*, вместе с указанием, что калькулятор согласуется с TRS-398 Rev.1.
 
-Оба условия по ссылке на источник выполнены в интерфейсе и в тексте «Скопировать для протокола». До отправки подписанного письма и получения файлов репозиторий остаётся **приватным**. Код проекта можно распространять свободно; лицензия для него будет выбрана при открытии репозитория, а файлы данных останутся под условием некоммерческого использования.
+**Эти условия распространяются на всех, кто использует калькулятор или файлы из папки [`data/`](data/README.md).** Ссылка на источник выведена в интерфейсе калькулятора и в тексте «Скопировать для протокола».
+
+Калькулятор бесплатный. Проект не является продуктом МАГАТЭ и не связан с ним официально.
 
 ## Что дальше
 
-- Отправить P. Andreo подписанное письмо о некоммерческом использовании данных.
-- Получить подробные числовые файлы веб-приложения, заменить ими таблицы C1–C11 и добавить расчёт B<sub>w</sub> для СПО в мм Cu; пересчитать контрольные точки.
-- Дать P. Andreo доступ к калькулятору (он просил показать его по готовности).
+- Получить от P. Andreo подробные числовые файлы веб-приложения, заменить ими таблицы C1–C11 и добавить расчёт B<sub>w</sub> для СПО в мм Cu; пересчитать контрольные точки.
+- Отправить P. Andreo ссылку на калькулятор: https://mesava.github.io/kV-x-rays-data/
 - Добавить контрольные точки у краёв диапазонов и в зонах экстраполяции.
-- Опубликовать калькулятор на GitHub Pages после решения вопроса с правами на данные. Для приватного репозитория Pages требует платного тарифа GitHub.
+
+## In English
+
+A free bilingual (Russian/English) calculator of backscatter factors B<sub>w</sub> and water/air ratios of mass energy-absorption coefficients [μ<sub>en</sub>/ρ]<sub>w,air</sub> for the dosimetry of low- and medium-energy kV x rays. It is consistent with IAEA TRS-398 Rev.1 and reproduces the IAEA web app [kvx-rays.iaea.org](https://kvx-rays.iaea.org/About): at 27 control points the results agree to four decimals at the table nodes and within 0.0005 between them. It runs entirely in the browser and also works offline as a single HTML file.
+
+- **Online:** https://mesava.github.io/kV-x-rays-data/ (switch to English with the «English» button)
+- **Data:** P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. Used with the permission of the author, **for non-commercial purposes only**; see [data/README.md](data/README.md).
+- **Authors:** Pedro Andreo, CPhys, FInstP — author of the data and the inspiration for this updated calculator; Aleksandr Valerievich Melentev, Lead Medical Physicist, Saint Petersburg, Russia — author of the calculator.
+
+This is not an IAEA product. Before clinical use, verify the results against the official IAEA web app; the medical physicist is responsible for the dosimetry.
