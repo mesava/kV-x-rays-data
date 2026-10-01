@@ -1,5 +1,5 @@
 // Сборка одного самодостаточного файла docs/index.html:
-// стили, данные, модуль расчёта и интерфейс встраиваются в страницу.
+// стили, данные, модуль расчёта, переводы и интерфейс встраиваются в страницу.
 // Такой файл открывается двойным щелчком без интернета и подходит для GitHub Pages.
 // Запуск: npm run build
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
@@ -10,6 +10,7 @@ const html = read("web/index.html");
 const css = read("web/style.css");
 const kvx = read("src/kvx.js").replace(/^export /gm, "");
 const app = read("web/app.js").replace(/^import .*$/gm, "");
+const i18n = read("web/i18n.js").replace(/^export /gm, "");
 const tables = read("data/andreo2019.json").trim();
 const nist = JSON.stringify(JSON.parse(read("data/nist_attenuation.json")));
 const version = JSON.parse(read("package.json")).version;
@@ -17,6 +18,7 @@ const version = JSON.parse(read("package.json")).version;
 const script = `
 globalThis.KVX_DATA = { tables: ${tables}, nist: ${nist} };
 ${kvx}
+${i18n}
 ${app}
 `.replace(/<\/script/gi, "<\\/script");
 

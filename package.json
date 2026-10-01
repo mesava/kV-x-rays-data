@@ -1,8 +1,8 @@
 {
   "name": "kv-x-rays-ru",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Русскоязычный калькулятор дозиметрических величин kV-рентгена по TRS-398 Rev.1 и данным Andreo (2019)",
+  "description": "Двуязычный (RU/EN) калькулятор дозиметрических величин kV-рентгена по TRS-398 Rev.1 и данным Andreo (2019)",
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",

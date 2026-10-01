@@ -80,19 +80,21 @@ export function createCalculator(tables, nist) {
     return (Math.LN2 / mu) * 10; // мм
   }
 
+  // Предупреждения возвращаются как { code, level, params }; текст на нужном языке
+  // формирует интерфейс по коду (web/i18n.js, раздел warn).
   function checks(q, kv, hvl, ssd, f, material) {
     const g = tables[q], w = [];
     const kmin = Math.min(...g.kv), kmax = Math.max(...g.kv);
     const hmin = g.hvl[0], hmax = g.hvl[g.hvl.length - 1];
     if (kv < kmin || kv > kmax)
-      w.push({ code: "kv_extrap", level: "info", text: `kV = ${kv} вне таблиц Andreo (${kmin}–${kmax} кВ): значение получено экстраполяцией.` });
+      w.push({ code: "kv_extrap", level: "info", params: { kv, min: kmin, max: kmax } });
     if (hvl < hmin || hvl > hmax)
-      w.push({ code: "hvl_extrap", level: "info", text: `СПО = ${hvl} мм ${material} вне таблиц (${hmin}–${hmax} мм): значение получено экстраполяцией.` });
+      w.push({ code: "hvl_extrap", level: "info", params: { hvl, material, min: hmin, max: hmax } });
     if (ssd < g.ssd_cm[0] || ssd > g.ssd_cm[g.ssd_cm.length - 1] || f < g.diam_cm[0] || f > g.diam_cm[g.diam_cm.length - 1])
-      w.push({ code: "geom_extrap", level: "warn", text: "РИП или диаметр поля вне таблиц: значение получено экстраполяцией." });
+      w.push({ code: "geom_extrap", level: "warn", params: {} });
     const hm = hvlMax(kv, material);
     if (hvl > hm)
-      w.push({ code: "hvl_unphysical", level: "error", text: `СПО = ${hvl} мм ${material} физически недостижим при ${kv} кВ (предел — СПО моноэнергетических фотонов ${kv} кэВ ≈ ${hm.toFixed(2)} мм ${material}). Результат недостоверен.` });
+      w.push({ code: "hvl_unphysical", level: "error", params: { hvl, kv, material, limit: hm } });
     return w;
   }
 
@@ -101,7 +103,7 @@ export function createCalculator(tables, nist) {
     const value = pchip(t.map((r) => Math.log(r[0])), t.map((r) => r[1]), Math.log(hvl));
     const w = [];
     if (hvl < t[0][0] || hvl > t[t.length - 1][0])
-      w.push({ code: "hvl_extrap", level: "info", text: `СПО вне таблицы C1 (${t[0][0]}–${t[t.length - 1][0]} мм ${material}).` });
+      w.push({ code: "hvl_extrap_c1", level: "info", params: { hvl, material, min: t[0][0], max: t[t.length - 1][0] } });
     return { value: round4(value), raw: value, warnings: w };
   }
 
@@ -127,8 +129,17 @@ export function createCalculator(tables, nist) {
   }
   function dedupe(ws) {
     const seen = new Set();
-    return ws.filter((w) => (seen.has(w.text) ? false : seen.add(w.text)));
+    return ws.filter((w) => {
+      const key = w.code + JSON.stringify(w.params);
+      return seen.has(key) ? false : seen.add(key);
+    });
   }
 
-  return { bw, muenFIA, muenZ2, kgBw, kgMuenZ2, hvlMax };
+  // Проверка физической реализуемости сочетания kV и СПО (для расчётов без сетки kV)
+  function hvlCheck(kv, hvl, material) {
+    const hm = hvlMax(kv, material);
+    return hvl > hm ? [{ code: "hvl_unphysical", level: "error", params: { hvl, kv, material, limit: hm } }] : [];
+  }
+
+  return { bw, muenFIA, muenZ2, kgBw, kgMuenZ2, hvlMax, hvlCheck };
 }

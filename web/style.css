@@ -50,7 +50,20 @@ button { font: inherit; color: inherit; }
 
 /* ---------- шапка ---------- */
 .masthead { border-bottom: 1px solid var(--rule); background: var(--surface); }
-.masthead-inner { max-width: 1240px; margin: 0 auto; padding: 28px 24px 22px; }
+.masthead-inner {
+  max-width: 1240px; margin: 0 auto; padding: 28px 24px 22px;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+}
+
+/* переключатель языка: две кнопки, выбранная залита */
+.lang { display: inline-flex; flex: none; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.lang-btn {
+  cursor: pointer; border: 0; background: transparent; padding: 6px 12px;
+  font-size: 0.9rem; color: var(--muted);
+}
+.lang-btn + .lang-btn { border-left: 1px solid var(--rule); }
+.lang-btn:hover { color: var(--ink); background: var(--paper); }
+.lang-btn[aria-pressed="true"] { background: var(--accent); color: var(--surface); font-weight: 700; }
 .masthead h1 { margin: 0 0 6px; font-size: 1.75rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; }
 .lede { margin: 0; max-width: 72ch; color: var(--muted); }
 
@@ -137,8 +150,23 @@ legend { font-weight: 700; font-size: 0.92rem; padding: 0; margin-bottom: 8px; }
 #copied { font-size: 0.9rem; color: var(--muted); }
 
 /* ---------- о проекте ---------- */
-.about { max-width: 1240px; margin: 8px auto 40px; padding: 20px 24px 0; border-top: 1px solid var(--rule); color: var(--muted); }
-.about h2 { font-size: 1.05rem; color: var(--ink); margin: 0 0 8px; }
+.site-footer {
+  max-width: 1240px; margin: 8px auto 40px; padding: 24px 24px 0; border-top: 1px solid var(--rule);
+  display: grid; gap: 28px;
+}
+.site-footer h2 { font-size: 1.05rem; color: var(--ink); margin: 0 0 12px; }
+
+/* авторы */
+.credits-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 28px; }
+.person { border-left: 3px solid var(--accent); padding: 2px 0 2px 14px; }
+.person p { margin: 0; }
+.person .person-role { font-size: 0.86rem; color: var(--muted); }
+.person .person-name { font-size: 1.12rem; font-weight: 700; line-height: 1.3; margin-top: 2px; }
+.person .person-contrib { margin-top: 4px; }
+.person .person-bio { margin-top: 6px; font-size: 0.88rem; color: var(--muted); max-width: 64ch; }
+
+/* о проекте */
+.about { color: var(--muted); }
 .about p { max-width: 80ch; margin: 0 0 8px; font-size: 0.92rem; }
 .about .disclaimer { color: var(--ink); font-weight: 600; }
 
@@ -151,7 +179,9 @@ legend { font-weight: 700; font-size: 0.92rem; padding: 0; margin-bottom: 8px; }
   .masthead-inner { padding: 20px 16px 16px; }
   .masthead h1 { font-size: 1.4rem; }
   .routes { position: static; gap: 12px; }
-  .about { padding: 16px 16px 0; }
+  .site-footer { padding: 18px 16px 0; gap: 22px; }
+  .credits-grid { grid-template-columns: minmax(0, 1fr); }
+  .lang-btn { padding: 5px 9px; font-size: 0.84rem; }
   .field-controls { grid-template-columns: 6.5em auto; }
   .range { grid-column: 1 / -1; }
   .inputs { padding: 16px 14px 4px; }
