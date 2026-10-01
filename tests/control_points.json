@@ -1,11 +1,14 @@
 {
  "meta": {
-  "source": "Ответы калькуляторов https://kvx-rays.iaea.org, получены 29.09.2026 отправкой форм с указанными параметрами.",
+  "source": "Ответы калькуляторов https://kvx-rays.iaea.org, получены 29.09.2026 и 01.10.2026 отправкой форм с указанными параметрами.",
   "groups": {
-   "node": "точка совпадает с узлом таблиц Andreo",
+   "node": "точка в узлах сетки данных",
    "between": "между узлами",
-   "outside": "вне опубликованных таблиц (экстраполяция)",
-   "kg": "составляющая k_Q,g (клин./опорн.)"
+   "outside": "вне таблиц C1–C11 статьи, но внутри сетки приложения",
+   "kg": "составляющая k_Q,g (клин./опорн.)",
+   "axis": "между узлами только по одной оси (kV, РИП, поле или СПО) — для определения интерполяции",
+   "random": "случайные сочетания параметров",
+   "fia": "развёртка [μen/ρ]FIA по СПО (сравнивается только эта величина)"
   }
  },
  "points": [
@@ -403,6 +406,1166 @@
     "ref": 1.1375,
     "clin": 1.2503,
     "kg": 1.0991
+   }
+  },
+  {
+   "id": "Al-kV15",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 15,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.234,
+    "muFIA": 1.016,
+    "prod": 1.2537
+   }
+  },
+  {
+   "id": "Al-kV85",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 85,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.2543,
+    "muFIA": 1.016,
+    "prod": 1.2744
+   }
+  },
+  {
+   "id": "Al-kV145",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 145,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.2718,
+    "muFIA": 1.016,
+    "prod": 1.2921
+   }
+  },
+  {
+   "id": "Al-H0.15",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 0.15,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.0804,
+    "muFIA": 1.0362,
+    "prod": 1.1195
+   }
+  },
+  {
+   "id": "Al-H2.5",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.2788,
+    "muFIA": 1.0179,
+    "prod": 1.3017
+   }
+  },
+  {
+   "id": "Al-H11",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 11,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.393,
+    "muFIA": 1.0676,
+    "prod": 1.4872
+   }
+  },
+  {
+   "id": "Al-S15",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 15,
+   "f": 10,
+   "site": {
+    "Bw": 1.2397,
+    "muFIA": 1.016,
+    "prod": 1.2595
+   }
+  },
+  {
+   "id": "Al-S40",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 40,
+   "f": 10,
+   "site": {
+    "Bw": 1.2558,
+    "muFIA": 1.016,
+    "prod": 1.2759
+   }
+  },
+  {
+   "id": "Al-S75",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 75,
+   "f": 10,
+   "site": {
+    "Bw": 1.261,
+    "muFIA": 1.016,
+    "prod": 1.2811
+   }
+  },
+  {
+   "id": "Al-F4",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 4,
+   "site": {
+    "Bw": 1.1683,
+    "muFIA": 1.016,
+    "prod": 1.1869
+   }
+  },
+  {
+   "id": "Al-F8",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 8,
+   "site": {
+    "Bw": 1.2343,
+    "muFIA": 1.016,
+    "prod": 1.254
+   }
+  },
+  {
+   "id": "Al-F25",
+   "group": "axis",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 2.0,
+   "ssd": 30,
+   "f": 25,
+   "site": {
+    "Bw": 1.2993,
+    "muFIA": 1.016,
+    "prod": 1.3201
+   }
+  },
+  {
+   "id": "Cu-kV75",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 75,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.3641,
+    "muFIA": 1.076,
+    "prod": 1.4678
+   }
+  },
+  {
+   "id": "Cu-kV150",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 150,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.3397,
+    "muFIA": 1.076,
+    "prod": 1.4416
+   }
+  },
+  {
+   "id": "Cu-kV230",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 230,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.3138,
+    "muFIA": 1.076,
+    "prod": 1.4137
+   }
+  },
+  {
+   "id": "Cu-H0.15",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 0.15,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.2712,
+    "muFIA": 1.0259,
+    "prod": 1.3041
+   }
+  },
+  {
+   "id": "Cu-H1.1",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.3224,
+    "muFIA": 1.0793,
+    "prod": 1.4273
+   }
+  },
+  {
+   "id": "Cu-H3.2",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 3.2,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "Bw": 1.2041,
+    "muFIA": 1.1044,
+    "prod": 1.3299
+   }
+  },
+  {
+   "id": "Cu-S15",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 15,
+   "f": 10,
+   "site": {
+    "Bw": 1.307,
+    "muFIA": 1.076,
+    "prod": 1.4064
+   }
+  },
+  {
+   "id": "Cu-S40",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 40,
+   "f": 10,
+   "site": {
+    "Bw": 1.335,
+    "muFIA": 1.076,
+    "prod": 1.4365
+   }
+  },
+  {
+   "id": "Cu-S75",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 75,
+   "f": 10,
+   "site": {
+    "Bw": 1.3439,
+    "muFIA": 1.076,
+    "prod": 1.446
+   }
+  },
+  {
+   "id": "Cu-F4",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 4,
+   "site": {
+    "Bw": 1.1729,
+    "muFIA": 1.076,
+    "prod": 1.2621
+   }
+  },
+  {
+   "id": "Cu-F8",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 8,
+   "site": {
+    "Bw": 1.2879,
+    "muFIA": 1.076,
+    "prod": 1.3857
+   }
+  },
+  {
+   "id": "Cu-F25",
+   "group": "axis",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 25,
+   "site": {
+    "Bw": 1.4738,
+    "muFIA": 1.076,
+    "prod": 1.5858
+   }
+  },
+  {
+   "id": "M2-kV75",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 75,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0551
+   }
+  },
+  {
+   "id": "M2-kV150",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 150,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0647
+   }
+  },
+  {
+   "id": "M2-kV230",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 230,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0681
+   }
+  },
+  {
+   "id": "M2-H0.15",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 0.15,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0398
+   }
+  },
+  {
+   "id": "M2-H1.1",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0687
+   }
+  },
+  {
+   "id": "M2-H3.2",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 3.2,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muz2": 1.0946
+   }
+  },
+  {
+   "id": "M2-S15",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 15,
+   "f": 10,
+   "site": {
+    "muz2": 1.0662
+   }
+  },
+  {
+   "id": "M2-S40",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 40,
+   "f": 10,
+   "site": {
+    "muz2": 1.0664
+   }
+  },
+  {
+   "id": "M2-S75",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 75,
+   "f": 10,
+   "site": {
+    "muz2": 1.0665
+   }
+  },
+  {
+   "id": "M2-F4",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 4,
+   "site": {
+    "muz2": 1.0717
+   }
+  },
+  {
+   "id": "M2-F8",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 8,
+   "site": {
+    "muz2": 1.0677
+   }
+  },
+  {
+   "id": "M2-F25",
+   "group": "axis",
+   "calculator": "muen2Cu",
+   "kV": 180,
+   "hvl": 1.0,
+   "ssd": 30,
+   "f": 25,
+   "site": {
+    "muz2": 1.062
+   }
+  },
+  {
+   "id": "Al-R0",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 60,
+   "hvl": 8.53,
+   "ssd": 70,
+   "f": 21,
+   "site": {
+    "Bw": 1.6005,
+    "muFIA": 1.052,
+    "prod": 1.6837
+   }
+  },
+  {
+   "id": "Cu-R0",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 85,
+   "hvl": 0.41,
+   "ssd": 95,
+   "f": 4,
+   "site": {
+    "Bw": 1.2216,
+    "muFIA": 1.0482,
+    "prod": 1.2805
+   }
+  },
+  {
+   "id": "M2-R0",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 185,
+   "hvl": 3.16,
+   "ssd": 90,
+   "f": 7,
+   "site": {
+    "muz2": 1.0962
+   }
+  },
+  {
+   "id": "Al-R1",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 15,
+   "hvl": 0.79,
+   "ssd": 75,
+   "f": 3,
+   "site": {
+    "Bw": 1.0877,
+    "muFIA": 1.0204,
+    "prod": 1.1099
+   }
+  },
+  {
+   "id": "Cu-R1",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 145,
+   "hvl": 0.51,
+   "ssd": 75,
+   "f": 2,
+   "site": {
+    "Bw": 1.1113,
+    "muFIA": 1.0541,
+    "prod": 1.1714
+   }
+  },
+  {
+   "id": "M2-R1",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 250,
+   "hvl": 0.69,
+   "ssd": 45,
+   "f": 21,
+   "site": {
+    "muz2": 1.0575
+   }
+  },
+  {
+   "id": "Al-R2",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 110,
+   "hvl": 5.26,
+   "ssd": 15,
+   "f": 19,
+   "site": {
+    "Bw": 1.3885,
+    "muFIA": 1.0344,
+    "prod": 1.4362
+   }
+  },
+  {
+   "id": "Cu-R2",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 255,
+   "hvl": 2.15,
+   "ssd": 45,
+   "f": 2,
+   "site": {
+    "Bw": 1.0653,
+    "muFIA": 1.0976,
+    "prod": 1.1693
+   }
+  },
+  {
+   "id": "M2-R2",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 245,
+   "hvl": 4.64,
+   "ssd": 55,
+   "f": 14,
+   "site": {
+    "muz2": 1.0992
+   }
+  },
+  {
+   "id": "Al-R3",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 30,
+   "hvl": 4.88,
+   "ssd": 100,
+   "f": 10,
+   "site": {
+    "Bw": 1.4147,
+    "muFIA": 1.0323,
+    "prod": 1.4603
+   }
+  },
+  {
+   "id": "Cu-R3",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 245,
+   "hvl": 4.41,
+   "ssd": 35,
+   "f": 4,
+   "site": {
+    "Bw": 1.0783,
+    "muFIA": 1.1097,
+    "prod": 1.1966
+   }
+  },
+  {
+   "id": "M2-R3",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 255,
+   "hvl": 3.09,
+   "ssd": 40,
+   "f": 12,
+   "site": {
+    "muz2": 1.0938
+   }
+  },
+  {
+   "id": "Al-R4",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 25,
+   "hvl": 4.94,
+   "ssd": 20,
+   "f": 19,
+   "site": {
+    "Bw": 1.4619,
+    "muFIA": 1.0326,
+    "prod": 1.5096
+   }
+  },
+  {
+   "id": "Cu-R4",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 85,
+   "hvl": 3.35,
+   "ssd": 85,
+   "f": 22,
+   "site": {
+    "Bw": 1.3331,
+    "muFIA": 1.1053,
+    "prod": 1.4735
+   }
+  },
+  {
+   "id": "M2-R4",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 240,
+   "hvl": 2.32,
+   "ssd": 60,
+   "f": 15,
+   "site": {
+    "muz2": 1.0867
+   }
+  },
+  {
+   "id": "Al-R5",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 100,
+   "hvl": 8.31,
+   "ssd": 65,
+   "f": 10,
+   "site": {
+    "Bw": 1.4074,
+    "muFIA": 1.0506,
+    "prod": 1.4786
+   }
+  },
+  {
+   "id": "Cu-R5",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 145,
+   "hvl": 4.29,
+   "ssd": 45,
+   "f": 3,
+   "site": {
+    "Bw": 1.0628,
+    "muFIA": 1.1094,
+    "prod": 1.1791
+   }
+  },
+  {
+   "id": "M2-R5",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 250,
+   "hvl": 1.64,
+   "ssd": 85,
+   "f": 29,
+   "site": {
+    "muz2": 1.0751
+   }
+  },
+  {
+   "id": "Al-R6",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 60,
+   "hvl": 6.57,
+   "ssd": 55,
+   "f": 20,
+   "site": {
+    "Bw": 1.5433,
+    "muFIA": 1.0412,
+    "prod": 1.607
+   }
+  },
+  {
+   "id": "Cu-R6",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 90,
+   "hvl": 0.66,
+   "ssd": 75,
+   "f": 6,
+   "site": {
+    "Bw": 1.2866,
+    "muFIA": 1.0619,
+    "prod": 1.3663
+   }
+  },
+  {
+   "id": "M2-R6",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 175,
+   "hvl": 0.84,
+   "ssd": 85,
+   "f": 14,
+   "site": {
+    "muz2": 1.0602
+   }
+  },
+  {
+   "id": "Al-R7",
+   "group": "random",
+   "calculator": "BmuenAl",
+   "kV": 15,
+   "hvl": 8.66,
+   "ssd": 20,
+   "f": 25,
+   "site": {
+    "Bw": 1.5767,
+    "muFIA": 1.0528,
+    "prod": 1.66
+   }
+  },
+  {
+   "id": "Cu-R7",
+   "group": "random",
+   "calculator": "BmuenCu",
+   "kV": 245,
+   "hvl": 3.1,
+   "ssd": 60,
+   "f": 11,
+   "site": {
+    "Bw": 1.229,
+    "muFIA": 1.1038,
+    "prod": 1.3566
+   }
+  },
+  {
+   "id": "M2-R7",
+   "group": "random",
+   "calculator": "muen2Cu",
+   "kV": 290,
+   "hvl": 1.9,
+   "ssd": 85,
+   "f": 19,
+   "site": {
+    "muz2": 1.0812
+   }
+  },
+  {
+   "id": "FIA1",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 8,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0486
+   }
+  },
+  {
+   "id": "FIA2",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 8.25,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0502
+   }
+  },
+  {
+   "id": "FIA3",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 8.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0518
+   }
+  },
+  {
+   "id": "FIA4",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 8.53,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.052
+   }
+  },
+  {
+   "id": "FIA5",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 8.75,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0534
+   }
+  },
+  {
+   "id": "FIA6",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 9,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0549
+   }
+  },
+  {
+   "id": "FIA7",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 9.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0578
+   }
+  },
+  {
+   "id": "FIA8",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 10,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0606
+   }
+  },
+  {
+   "id": "FIA9",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 10.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0642
+   }
+  },
+  {
+   "id": "FIA10",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 11,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0676
+   }
+  },
+  {
+   "id": "FIA11",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 80,
+   "hvl": 11.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.071
+   }
+  },
+  {
+   "id": "FIA12",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 30,
+   "hvl": 11,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0676
+   }
+  },
+  {
+   "id": "FIA13",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 150,
+   "hvl": 11,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0676
+   }
+  },
+  {
+   "id": "FIA14",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.076
+   }
+  },
+  {
+   "id": "FIA15",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.05,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0777
+   }
+  },
+  {
+   "id": "FIA16",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0793
+   }
+  },
+  {
+   "id": "FIA17",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.15,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0808
+   }
+  },
+  {
+   "id": "FIA18",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.2,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0823
+   }
+  },
+  {
+   "id": "FIA19",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 1.25,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0837
+   }
+  },
+  {
+   "id": "FIA20",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 4,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.1085
+   }
+  },
+  {
+   "id": "FIA21",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 4.2,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.1091
+   }
+  },
+  {
+   "id": "FIA22",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 4.41,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.1097
+   }
+  },
+  {
+   "id": "FIA23",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 180,
+   "hvl": 4.5,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.11
+   }
+  },
+  {
+   "id": "FIA24",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 80,
+   "hvl": 1.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0793
+   }
+  },
+  {
+   "id": "FIA25",
+   "group": "fia",
+   "calculator": "BmuenCu",
+   "kV": 300,
+   "hvl": 1.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0793
+   }
+  },
+  {
+   "id": "FIA26",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 50,
+   "hvl": 0.15,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0362
+   }
+  },
+  {
+   "id": "FIA27",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 50,
+   "hvl": 0.35,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.028
+   }
+  },
+  {
+   "id": "FIA28",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 50,
+   "hvl": 0.45,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0257
+   }
+  },
+  {
+   "id": "FIA29",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 50,
+   "hvl": 2.1,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0163
+   }
+  },
+  {
+   "id": "FIA30",
+   "group": "fia",
+   "calculator": "BmuenAl",
+   "kV": 50,
+   "hvl": 2.35,
+   "ssd": 30,
+   "f": 10,
+   "site": {
+    "muFIA": 1.0172
    }
   }
  ]

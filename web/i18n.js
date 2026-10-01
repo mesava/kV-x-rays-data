@@ -61,11 +61,13 @@ export const I18N = {
       },
       BmuenCu: {
         tab: "Средние энергии, воздушный метод",
-        tabSub: "не рекомендован TRS-398, данные неполные",
+        tabSub: "B<sub>w</sub> и [μ<sub>en</sub>/ρ]<sup>FIA</sup>, СПО в мм Cu, не рекомендован TRS-398",
         title: "Средние энергии, воздушный метод",
         method: "Камера откалибрована по воздушной керме в свободном воздухе",
-        main: "Отношение вода/воздух в свободном воздухе, СПО в мм Cu",
-        missing: "Фактор обратного рассеяния B<sub>w</sub> для СПО в мм Cu в опубликованных таблицах Andreo отсутствует, поэтому здесь не рассчитывается. Его даёт только приложение МАГАТЭ (раздел BmuenCu). TRS-398 не рекомендует измерять пучки средних энергий в воздухе.",
+        main: "Произведение",
+        bw: "Фактор обратного рассеяния в воде",
+        mu: "Отношение вода/воздух в свободном воздухе",
+        missing: "TRS-398 не рекомендует измерять пучки средних энергий в воздухе: измерения в водном фантоме на глубине 2 см меньше подвержены погрешностям. Расчёт приведён для тех, кто основывает дозиметрию на воздушном методе.",
       },
       kgBwAl: {
         tab: "Низкие энергии, поправка на геометрию",
@@ -110,7 +112,7 @@ export const I18N = {
     about: {
       heading: "Что это и откуда числа",
       p1: "Неофициальный двуязычный аналог приложения МАГАТЭ <a href=\"https://kvx-rays.iaea.org/About\">kvx-rays.iaea.org</a>, на которое ссылается TRS-398 Rev.1. Калькулятор согласуется с TRS-398 Rev.1. Расчёт идёт полностью в браузере и работает без интернета.",
-      p2: `Источник данных: ${CITATION_HTML} (таблицы C1–C11 из Supplementary Data). Между узлами таблиц значения интерполируются; на контрольных точках результат совпадает с сайтом МАГАТЭ в узлах до 4-го знака, между узлами — не хуже 0,0005.`,
+      p2: `Источник данных: ${CITATION_HTML}. Используются те же файлы данных и та же интерполяция, что в веб-приложении МАГАТЭ; файлы предоставлены автором. Во всех 117 контрольных точках результат совпадает с сайтом МАГАТЭ до 4-го знака.`,
       p3: "Неопределённость самих данных: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (стандартная, k = 1).",
       p4: "Данные используются только в некоммерческих целях.",
       disclaimer: "Перед клиническим применением сверьте результат с официальным приложением МАГАТЭ. Ответственность за дозиметрию несёт медицинский физик.",
@@ -169,11 +171,13 @@ export const I18N = {
       },
       BmuenCu: {
         tab: "Medium energies, in-air method",
-        tabSub: "not recommended by TRS-398, incomplete data",
+        tabSub: "B<sub>w</sub> and [μ<sub>en</sub>/ρ]<sup>FIA</sup>, HVL in mm Cu, not recommended by TRS-398",
         title: "Medium energies, in-air method",
         method: "Chamber calibrated in terms of air kerma free in air",
-        main: "Water/air ratio free in air, HVL in mm Cu",
-        missing: "The backscatter factor B<sub>w</sub> for HVLs in mm Cu is not in Andreo's published tables, so it is not calculated here. Only the IAEA web app provides it (BmuenCu page). TRS-398 does not recommend in-air measurements of medium-energy beams.",
+        main: "Product",
+        bw: "Backscatter factor in water",
+        mu: "Water/air ratio free in air",
+        missing: "TRS-398 does not recommend in-air measurements of medium-energy beams; measurements in a water phantom at 2 cm depth are less prone to inaccuracies. This option is provided for users who base their dosimetry on the in-air method.",
       },
       kgBwAl: {
         tab: "Low energies, geometry correction",
@@ -218,7 +222,7 @@ export const I18N = {
     about: {
       heading: "About this calculator",
       p1: "An unofficial bilingual counterpart of the IAEA web app <a href=\"https://kvx-rays.iaea.org/About\">kvx-rays.iaea.org</a> referenced in TRS-398 Rev.1. The calculator is consistent with IAEA TRS-398 Rev.1. All calculations run in the browser, with no internet connection needed.",
-      p2: `Data source: ${CITATION_HTML} (Tables C1–C11 of the Supplementary Data). Values between table nodes are interpolated; at the control points the results match the IAEA web app to four decimals at the nodes and within 0.0005 between them.`,
+      p2: `Data source: ${CITATION_HTML}. The calculator uses the same data files and the same interpolation as the IAEA web app; the files were provided by the author. At all 117 control points the results match the IAEA web app to four decimals.`,
       p3: "Uncertainty of the data: B<sub>w</sub> 0.6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> 0.3 % (standard, k = 1).",
       p4: "The data are used for non-commercial purposes only.",
       disclaimer: "Before clinical use, verify the results against the official IAEA web app. The medical physicist is responsible for the dosimetry.",

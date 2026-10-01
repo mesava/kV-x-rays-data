@@ -6,7 +6,7 @@ import { I18N, LANGS } from "./i18n.js";
 async function loadData() {
   if (globalThis.KVX_DATA) return globalThis.KVX_DATA;
   const get = (p) => fetch(p).then((r) => r.json());
-  const [tables, nist] = await Promise.all([get("../data/andreo2019.json"), get("../data/nist_attenuation.json")]);
+  const [tables, nist] = await Promise.all([get("../data/andreo_webapp.json"), get("../data/nist_attenuation.json")]);
   return { tables, nist };
 }
 
@@ -86,14 +86,17 @@ const CALCS = {
   BmuenCu: {
     fields: [F.kV(70, 300, 185), F.hvl("Cu", 5.5, 2.8), F.ssd(), F.f()],
     run(c, p, t) {
-      const m = c.muenFIA(p.hvl, "Cu");
+      const b = c.bwCu(p.kV, p.hvl, p.ssd, p.f), m = c.muenFIA(p.hvl, "Cu");
       return {
-        main: { sym: "[μ<sub>en</sub>(Q)/ρ]<sup>FIA</sup><sub>w,air</sub>", value: m.value, name: t.main },
-        rows: [],
+        main: { sym: "B<sub>w</sub> · [μ<sub>en</sub>/ρ]<sup>FIA</sup><sub>w,air</sub>", value: Math.round(b.raw * m.raw * 1e4) / 1e4, name: t.main },
+        rows: [
+          { sym: `B<sub>w</sub>(Q, f, ${T.sym.ssd})`, value: b.value, unc: pct(0.6), name: t.bw },
+          { sym: "[μ<sub>en</sub>(Q)/ρ]<sup>FIA</sup><sub>w,air</sub>", value: m.value, name: t.mu },
+        ],
         missing: t.missing,
         formula: "D<sub>w,Q</sub><sup>surface</sup> = K<sup>FIA</sup><sub>air,Q</sub> · B<sub>w</sub> · [μ<sub>en</sub>/ρ]<sup>FIA</sup><sub>w,air</sub>",
         eq: T.eqAnalog(50),
-        warnings: [...m.warnings, ...c.hvlCheck(p.kV, p.hvl, "Cu")],
+        warnings: [...b.warnings, ...m.warnings],
       };
     },
   },

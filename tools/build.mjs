@@ -11,7 +11,7 @@ const css = read("web/style.css");
 const kvx = read("src/kvx.js").replace(/^export /gm, "");
 const app = read("web/app.js").replace(/^import .*$/gm, "");
 const i18n = read("web/i18n.js").replace(/^export /gm, "");
-const tables = read("data/andreo2019.json").trim();
+const tables = read("data/andreo_webapp.json").trim();
 const nist = JSON.stringify(JSON.parse(read("data/nist_attenuation.json")));
 const version = JSON.parse(read("package.json")).version;
 
