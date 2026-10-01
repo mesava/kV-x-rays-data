@@ -141,11 +141,6 @@ python tools/convert_andreo_dat.py папка_с_dat_файлами data/andreo_
 
 **Лицензия кода — MIT** (файл [`LICENSE`](LICENSE)): код можно свободно использовать, изменять и распространять с сохранением уведомления об авторстве. Лицензия MIT **не распространяется на данные Andreo** в `data/andreo_webapp.json` и встроенные в `docs/index.html`: для них действуют условия выше. Данные NIST в `data/nist_attenuation.json` — общественное достояние (работа правительства США).
 
-## Что дальше
-
-- Отправить P. Andreo ссылку на калькулятор: https://mesava.github.io/kV-x-rays-data/
-- Когда МАГАТЭ опубликует Excel-таблицы к TRS-398 Rev.1, сверить с ними расчёты.
-
 ## In English
 
 A free bilingual (Russian/English) calculator of backscatter factors B<sub>w</sub> and water/air ratios of mass energy-absorption coefficients [μ<sub>en</sub>/ρ]<sub>w,air</sub> for the dosimetry of low- and medium-energy kV x rays. It is consistent with IAEA TRS-398 Rev.1 and reproduces the IAEA web app [kvx-rays.iaea.org](https://kvx-rays.iaea.org/About) exactly: it uses the same data files, provided by P. Andreo, and the same interpolation (a quadratic spline along kV, SSD, field diameter and HVL; log–log linear for [μ<sub>en</sub>/ρ]<sup>FIA</sup>). At all 117 control points (233 values) the results agree with the IAEA web app to four decimals. It runs entirely in the browser and also works offline as a single HTML file.
