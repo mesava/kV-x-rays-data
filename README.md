@@ -19,7 +19,7 @@
 
 | | |
 |---|---|
-| **Данные** | **Pedro Andreo, CPhys, FInstP** — автор данных и вдохновитель создания обновлённой версии калькулятора. Professor of Medical Radiation Physics (retired), Dept of Medical Radiation Physics and Nuclear Medicine, Karolinska University Hospital, and Dept of Oncology-Pathology, Karolinska Institutet. Former Director of the Division of Human Health, International Atomic Energy Agency (IAEA). |
+| **Данные** | **Pedro Andreo, CPhys, FInstP** — автор данных и вдохновитель создания обновлённой версии калькулятора. Professor of Medical Radiation Physics (retired), Dept of Medical Radiation Physics and Nuclear Medicine, Karolinska University Hospital, and Dept of Oncology-Pathology, Karolinska Institutet.<br>Former Director of the Division of Human Health, International Atomic Energy Agency (IAEA). |
 | **Калькулятор** | **Мелентьев Александр Валериевич** (Aleksandr Valerievich Melentev) — автор обновлённого калькулятора. Ведущий медицинский физик, магистр, Санкт-Петербург, Россия (Lead Medical Physicist, Master's degree, Saint Petersburg, Russia). |
 
 **Ссылка на источник данных** (в формате, согласованном с автором):
@@ -95,6 +95,7 @@
 docs/index.html            готовый калькулятор одним файлом (собирается автоматически)
 index.html                 перенаправление с короткого адреса GitHub Pages на docs/
 data/README.md             условия использования данных
+LICENSE                    лицензия MIT для кода (данные — на условиях автора)
 web/                       исходники интерфейса: index.html, style.css, app.js
 web/i18n.js                все тексты интерфейса на русском и английском
 src/kvx.js                 модуль расчёта: интерполяция, B_w, μ_en, k_Q,g, проверки
@@ -140,9 +141,11 @@ python tools/parse_andreo_tables.py tables.txt data/andreo2019.json
 
 Калькулятор бесплатный. Проект не является продуктом МАГАТЭ и не связан с ним официально.
 
+**Лицензия кода — MIT** (файл [`LICENSE`](LICENSE)): код можно свободно использовать, изменять и распространять с сохранением уведомления об авторстве. Лицензия MIT **не распространяется на данные Andreo** в `data/andreo2019.json` и встроенные в `docs/index.html`: для них действуют условия выше. Данные NIST в `data/nist_attenuation.json` — общественное достояние (работа правительства США).
+
 ## Что дальше
 
-- Получить от P. Andreo подробные числовые файлы веб-приложения, заменить ими таблицы C1–C11 и добавить расчёт B<sub>w</sub> для СПО в мм Cu; пересчитать контрольные точки.
+- Подключить подробные файлы данных веб-приложения (5 файлов, получены от P. Andreo 1 октября 2026 г.) вместо таблиц C1–C11, добавить расчёт B<sub>w</sub> для СПО в мм Cu и пересчитать контрольные точки.
 - Отправить P. Andreo ссылку на калькулятор: https://mesava.github.io/kV-x-rays-data/
 - Добавить контрольные точки у краёв диапазонов и в зонах экстраполяции.
 
@@ -153,5 +156,7 @@ A free bilingual (Russian/English) calculator of backscatter factors B<sub>w</su
 - **Online:** https://mesava.github.io/kV-x-rays-data/ (switch to English with the «English» button)
 - **Data:** P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. Used with the permission of the author, **for non-commercial purposes only**; see [data/README.md](data/README.md).
 - **Authors:** Pedro Andreo, CPhys, FInstP — author of the data and the inspiration for this updated calculator; Aleksandr Valerievich Melentev, Lead Medical Physicist, Saint Petersburg, Russia — author of the calculator.
+
+The source code is released under the MIT License (see [LICENSE](LICENSE)); the MIT License does not cover the Andreo data, which remain under the non-commercial terms above.
 
 This is not an IAEA product. Before clinical use, verify the results against the official IAEA web app; the medical physicist is responsible for the dosimetry.
