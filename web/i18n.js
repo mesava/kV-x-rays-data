@@ -9,7 +9,7 @@ const CITATION_HTML = `<a href="${DOI}">${CITATION}</a>`;
 export const LANGS = ["ru", "en"];
 
 // Список литературы одинаков для обоих языков; издания МАГАТЭ цитируются с авторами.
-const REFERENCES = `<li>P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. <a href="https://doi.org/10.1088/1361-6560/ab421d">doi:10.1088/1361-6560/ab421d</a></li><li>Andreo P, Burns D T, Kapsch R-P, McEwen M and Vatnitsky S 2024 Absorbed dose determination in external beam radiotherapy: an international code of practice for dosimetry based on standards of absorbed dose to water. IAEA Technical Reports Series no. 398 (Rev. 1) (Vienna: International Atomic Energy Agency)</li><li>Hubbell J H and Seltzer S M 2004 Tables of X-ray mass attenuation coefficients and mass energy-absorption coefficients (version 1.4). NIST Standard Reference Database 126 (Gaithersburg, MD: National Institute of Standards and Technology)</li>`;
+const REFERENCES = `<li>P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. <a href="https://doi.org/10.1088/1361-6560/ab421d">doi:10.1088/1361-6560/ab421d</a></li><li>Andreo P, Burns D T, Kapsch R-P, McEwen M and Vatnitsky S 2024 Absorbed dose determination in external beam radiotherapy: an international code of practice for dosimetry based on standards of absorbed dose to water. IAEA Technical Reports Series no. 398 (Rev. 1) (Vienna: International Atomic Energy Agency)</li>`;
 
 export const I18N = {
   ru: {
@@ -116,7 +116,7 @@ export const I18N = {
       heading: "Что это и откуда числа",
       p1: "Неофициальный двуязычный аналог приложения МАГАТЭ <a href=\"https://kvx-rays.iaea.org/About\">kvx-rays.iaea.org</a>, на которое ссылается TRS-398 Rev.1. Калькулятор согласуется с TRS-398 Rev.1. Расчёт идёт полностью в браузере и работает без интернета.",
       p2: `Источник данных: ${CITATION_HTML}. Используются те же файлы данных и та же интерполяция, что в веб-приложении МАГАТЭ; файлы предоставлены автором. Во всех 117 контрольных точках результат совпадает с сайтом МАГАТЭ до 4-го знака.`,
-      p3: "Неопределённость самих данных: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (стандартная, k = 1).",
+      p3: "Неопределённость самих данных: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (стандартная, k = 1). При такой неопределённости четыре знака после запятой приводятся только для того, чтобы избежать расхождений из-за округления.",
       p4: "Данные используются только в некоммерческих целях.",
       disclaimer: "Перед клиническим применением сверьте результат с официальным приложением МАГАТЭ. Ответственность за дозиметрию несёт медицинский физик.",
     },
@@ -230,7 +230,7 @@ export const I18N = {
       heading: "About this calculator",
       p1: "An unofficial bilingual counterpart of the IAEA web app <a href=\"https://kvx-rays.iaea.org/About\">kvx-rays.iaea.org</a> referenced in TRS-398 Rev.1. The calculator is consistent with IAEA TRS-398 Rev.1. All calculations run in the browser, with no internet connection needed.",
       p2: `Data source: ${CITATION_HTML}. The calculator uses the same data files and the same interpolation as the IAEA web app; the files were provided by the author. At all 117 control points the results match the IAEA web app to four decimals.`,
-      p3: "Uncertainty of the data: B<sub>w</sub> 0.6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> 0.3 % (standard, k = 1).",
+      p3: "Uncertainty of the data: B<sub>w</sub> 0.6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> 0.3 % (standard, k = 1). Given these uncertainties, the calculated quantities are shown with four decimals only to avoid potential discrepancies due to round-off.",
       p4: "The data are used for non-commercial purposes only.",
       disclaimer: "Before clinical use, verify the results against the official IAEA web app. The medical physicist is responsible for the dosimetry.",
     },

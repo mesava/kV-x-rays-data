@@ -3,7 +3,7 @@
 | Файл | Содержание | Источник |
 |---|---|---|
 | `andreo_webapp.json` | B<sub>w</sub>(kV, РИП, поле, СПО) для СПО в мм Al и в мм Cu; [μ<sub>en</sub>/ρ]<sup>z=2</sup><sub>w,air</sub>(kV, РИП, поле, СПО в мм Cu) — по 16 × 5 × 8 × 32 узлов; [μ<sub>en</sub>/ρ]<sup>FIA</sup><sub>w,air</sub>(СПО) для мм Al и мм Cu | Файлы данных веб-приложения МАГАТЭ kvx-rays.iaea.org, переданы автором P. Andreo 1 октября 2026 г. |
-| `nist_attenuation.json` | Массовые коэффициенты ослабления Al и Cu (для проверки физической реализуемости СПО) | NIST X-Ray Mass Attenuation Coefficients (Hubbell, Seltzer) |
+| `nist_attenuation.json` | Массовые коэффициенты ослабления Al и Cu — только для предупреждения о физически недостижимом СПО; к данным Andreo отношения не имеют и на рассчитываемые величины не влияют | NIST X-Ray Mass Attenuation Coefficients (Hubbell, Seltzer) |
 
 `andreo_webapp.json` получен из исходных файлов `Bw_HVL-AL_.dat`, `Bw_HVL-CU_.dat`, `muen2_HVL-CU_.dat`, `muenFIA_HVL-AL_.dat`, `muenFIA_HVL-CU_.dat` скриптом `tools/convert_andreo_dat.py` (значения округлены до 9 знаков после запятой). Сами исходные файлы в репозиторий не входят.
 

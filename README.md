@@ -57,9 +57,11 @@
 ## Откуда данные
 
 - **B<sub>w</sub> и [μ<sub>en</sub>/ρ]<sub>w,air</sub>** — файлы данных веб-приложения МАГАТЭ kvx-rays.iaea.org, переданные автором P. Andreo 1 октября 2026 г. Это расширенные базы к статье: P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019, [doi:10.1088/1361-6560/ab421d](https://doi.org/10.1088/1361-6560/ab421d). Таблицы C1–C11 из Supplementary Data к статье — сокращённый вариант этих данных. Сокращены они не только ради объёма публикации: автор намеренно не стал приводить в статье полные данные для средних энергий при измерениях в воздухе, чтобы не поощрять этот метод. Подробнее о файлах — в [`data/README.md`](data/README.md).
-- **Предел СПО для заданного кВ** — массовые коэффициенты ослабления алюминия и меди из базы NIST (Hubbell, Seltzer). Предел — это СПО моноэнергетических фотонов с энергией, равной напряжению: реальный спектр не может иметь больший СПО.
+Данные Andreo получены расчётами методом Монте-Карло (PENELOPE-2014, с переносом электронов); исходные базовые данные и ссылки на них приведены в его статье.
 
-Неопределённость данных по оценке автора: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (k = 1). Для множителя поправки на геометрию TRS-398 Rev.1 оценивает её в 0,2 %.
+- **Проверка физической реализуемости СПО** — вспомогательная функция калькулятора, к данным Andreo отношения не имеет. Для неё используются массовые коэффициенты ослабления алюминия и меди из базы NIST (Hubbell, Seltzer; файл `data/nist_attenuation.json`): предел — это СПО моноэнергетических фотонов с энергией, равной напряжению; реальный спектр не может иметь больший СПО. На рассчитываемые величины эти данные не влияют.
+
+Неопределённость данных по оценке автора: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (k = 1). Для множителя поправки на геометрию TRS-398 Rev.1 оценивает её в 0,2 %. При такой неопределённости четыре знака после запятой приводятся только для того, чтобы избежать расхождений из-за округления.
 
 ### Как считаются значения между узлами
 
@@ -101,7 +103,7 @@ web/                       исходники интерфейса: index.html, 
 web/i18n.js                все тексты интерфейса на русском и английском
 src/kvx.js                 модуль расчёта: интерполяция, B_w, μ_en, k_Q,g, проверки
 data/andreo_webapp.json    данные веб-приложения МАГАТЭ (P. Andreo) в машиночитаемом виде
-data/nist_attenuation.json коэффициенты ослабления Al и Cu (NIST) для проверки СПО
+data/nist_attenuation.json коэффициенты ослабления Al и Cu (NIST) — только для предупреждения о недостижимом СПО
 tests/control_points.json  контрольные точки с сайта МАГАТЭ
 tests/kvx.test.mjs         тесты расчёта
 tests/i18n.test.mjs        тесты полноты переводов
@@ -132,7 +134,6 @@ python tools/convert_andreo_dat.py папка_с_dat_файлами data/andreo_
 
 1. P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. [doi:10.1088/1361-6560/ab421d](https://doi.org/10.1088/1361-6560/ab421d)
 2. Andreo P, Burns D T, Kapsch R-P, McEwen M and Vatnitsky S 2024 Absorbed dose determination in external beam radiotherapy: an international code of practice for dosimetry based on standards of absorbed dose to water. IAEA Technical Reports Series no. 398 (Rev. 1) (Vienna: International Atomic Energy Agency)
-3. Hubbell J H and Seltzer S M 2004 Tables of X-ray mass attenuation coefficients and mass energy-absorption coefficients (version 1.4). NIST Standard Reference Database 126 (Gaithersburg, MD: National Institute of Standards and Technology)
 
 Издания МАГАТЭ цитируются с авторами: МАГАТЭ указывается как издатель.
 
@@ -153,7 +154,7 @@ python tools/convert_andreo_dat.py папка_с_dat_файлами data/andreo_
 
 ## In English
 
-A free bilingual (Russian/English) calculator of backscatter factors B<sub>w</sub> and water/air ratios of mass energy-absorption coefficients [μ<sub>en</sub>/ρ]<sub>w,air</sub> for the dosimetry of low- and medium-energy kV x rays. It is consistent with IAEA TRS-398 Rev.1 and reproduces the IAEA web app [kvx-rays.iaea.org](https://kvx-rays.iaea.org/About) exactly: it uses the same data files, provided by P. Andreo, and the same interpolation (a quadratic spline along kV, SSD, field diameter and HVL; log–log linear for [μ<sub>en</sub>/ρ]<sup>FIA</sup>). At all 117 control points (233 values) the results agree with the IAEA web app to four decimals. It runs entirely in the browser and also works offline as a single HTML file.
+A free bilingual (Russian/English) calculator of backscatter factors B<sub>w</sub> and water/air ratios of mass energy-absorption coefficients [μ<sub>en</sub>/ρ]<sub>w,air</sub> for the dosimetry of low- and medium-energy kV x rays. It is consistent with IAEA TRS-398 Rev.1 and reproduces the IAEA web app [kvx-rays.iaea.org](https://kvx-rays.iaea.org/About) exactly: it uses the same data files, provided by P. Andreo, and the same interpolation (a quadratic spline along kV, SSD, field diameter and HVL; log–log linear for [μ<sub>en</sub>/ρ]<sup>FIA</sup>). At all 117 control points (233 values) the results agree with the IAEA web app to four decimals. Given the uncertainties of the data (0.6 % for B<sub>w</sub>, 0.3 % for [μ<sub>en</sub>/ρ]<sup>z=2</sup>), four decimals are given only to avoid potential discrepancies due to round-off. It runs entirely in the browser and also works offline as a single HTML file.
 
 - **Online:** https://mesava.github.io/kV-x-rays-data/ (switch to English with the «English» button)
 - **Data:** P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. The data files of the IAEA web app are used with the permission of the author, **for non-commercial purposes only**; see [data/README.md](data/README.md).
