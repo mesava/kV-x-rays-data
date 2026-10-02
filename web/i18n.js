@@ -15,9 +15,9 @@ export const I18N = {
   ru: {
     decimal: ",",
     htmlLang: "ru",
-    htmlTitle: "kV-рентген: данные TRS-398",
+    htmlTitle: "Данные рентгеновского излучения",
     ui: {
-      title: "Дозиметрия kV-рентгена по TRS-398",
+      title: "Данные рентгеновского излучения",
       lede: "Факторы обратного рассеяния B<sub>w</sub> и отношения [μ<sub>en</sub>/ρ]<sub>w,air</sub> для рентгена низких и средних энергий. Данные — P. Andreo (Phys. Med. Biol. 2019), те же, что в веб-приложении МАГАТЭ.",
       langLabel: "Язык интерфейса",
       navLabel: "Выбор расчёта",
@@ -129,9 +129,9 @@ export const I18N = {
   en: {
     decimal: ".",
     htmlLang: "en",
-    htmlTitle: "kV x rays: TRS-398 data",
+    htmlTitle: "kV x-rays data",
     ui: {
-      title: "kV x-ray dosimetry with TRS-398",
+      title: "kV x-rays data",
       lede: "Backscatter factors B<sub>w</sub> and water/air ratios [μ<sub>en</sub>/ρ]<sub>w,air</sub> for low- and medium-energy x rays. Data by P. Andreo (Phys. Med. Biol. 2019), the same as in the IAEA web app.",
       langLabel: "Interface language",
       navLabel: "Choose a calculation",
