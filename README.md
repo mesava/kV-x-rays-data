@@ -128,6 +128,14 @@ npm run build    # сборка docs/index.html из web/, src/ и data/
 python tools/convert_andreo_dat.py папка_с_dat_файлами data/andreo_webapp.json
 ```
 
+## Литература
+
+1. P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. [doi:10.1088/1361-6560/ab421d](https://doi.org/10.1088/1361-6560/ab421d)
+2. Andreo P, Burns D T, Kapsch R-P, McEwen M and Vatnitsky S 2024 Absorbed dose determination in external beam radiotherapy: an international code of practice for dosimetry based on standards of absorbed dose to water. IAEA Technical Reports Series no. 398 (Rev. 1) (Vienna: International Atomic Energy Agency)
+3. Hubbell J H and Seltzer S M 2004 Tables of X-ray mass attenuation coefficients and mass energy-absorption coefficients (version 1.4). NIST Standard Reference Database 126 (Gaithersburg, MD: National Institute of Standards and Technology)
+
+Издания МАГАТЭ цитируются с авторами: МАГАТЭ указывается как издатель.
+
 ## Правовой статус и условия использования
 
 Числовые данные — файлы веб-приложения МАГАТЭ, переданные автором, P. Andreo; это расширенные базы к его статье в Phys. Med. Biol. (2019).

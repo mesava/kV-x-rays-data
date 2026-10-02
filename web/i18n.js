@@ -8,6 +8,9 @@ const CITATION_HTML = `<a href="${DOI}">${CITATION}</a>`;
 
 export const LANGS = ["ru", "en"];
 
+// Список литературы одинаков для обоих языков; издания МАГАТЭ цитируются с авторами.
+const REFERENCES = `<li>P Andreo (2019) Data for the dosimetry of low- and medium-energy kV x rays. Phys. Med. Biol., 64:205019. <a href="https://doi.org/10.1088/1361-6560/ab421d">doi:10.1088/1361-6560/ab421d</a></li><li>Andreo P, Burns D T, Kapsch R-P, McEwen M and Vatnitsky S 2024 Absorbed dose determination in external beam radiotherapy: an international code of practice for dosimetry based on standards of absorbed dose to water. IAEA Technical Reports Series no. 398 (Rev. 1) (Vienna: International Atomic Energy Agency)</li><li>Hubbell J H and Seltzer S M 2004 Tables of X-ray mass attenuation coefficients and mass energy-absorption coefficients (version 1.4). NIST Standard Reference Database 126 (Gaithersburg, MD: National Institute of Standards and Technology)</li>`;
+
 export const I18N = {
   ru: {
     decimal: ",",
@@ -97,7 +100,7 @@ export const I18N = {
       geom_extrap: () => "РИП или диаметр поля вне таблиц: значение получено экстраполяцией.",
       hvl_unphysical: (p, n) => `СПО ${n(p.hvl, 2)} мм ${p.material} физически недостижим при ${p.kv} кВ: предел — СПО моноэнергетических фотонов ${p.kv} кэВ, около ${n(p.limit, 2)} мм ${p.material}. Результат недостоверен.`,
     },
-    copyFooter: `Данные: ${CITATION}. Расчёт согласуется с TRS-398 Rev.1 (МАГАТЭ).`,
+    copyFooter: `Данные: ${CITATION}. Расчёт согласуется с TRS-398 Rev.1 (Andreo et al., МАГАТЭ, 2024).`,
     credits: {
       heading: "Авторы",
       dataRole: "Данные",
@@ -116,6 +119,10 @@ export const I18N = {
       p3: "Неопределённость самих данных: B<sub>w</sub> — 0,6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> — 0,3 % (стандартная, k = 1).",
       p4: "Данные используются только в некоммерческих целях.",
       disclaimer: "Перед клиническим применением сверьте результат с официальным приложением МАГАТЭ. Ответственность за дозиметрию несёт медицинский физик.",
+    },
+    refs: {
+      heading: "Литература",
+      list: REFERENCES,
     },
   },
 
@@ -207,7 +214,7 @@ export const I18N = {
       geom_extrap: () => "SSD or field diameter is outside the tables: the value is extrapolated.",
       hvl_unphysical: (p, n) => `An HVL of ${n(p.hvl, 2)} mm ${p.material} cannot occur at ${p.kv} kV: the limit is the HVL of ${p.kv} keV monoenergetic photons, about ${n(p.limit, 2)} mm ${p.material}. The result is not reliable.`,
     },
-    copyFooter: `Data: ${CITATION}. Calculation consistent with IAEA TRS-398 Rev.1.`,
+    copyFooter: `Data: ${CITATION}. Calculation consistent with TRS-398 Rev.1 (Andreo et al., IAEA, 2024).`,
     credits: {
       heading: "Authors",
       dataRole: "Data",
@@ -226,6 +233,10 @@ export const I18N = {
       p3: "Uncertainty of the data: B<sub>w</sub> 0.6 %, [μ<sub>en</sub>/ρ]<sup>z=2</sup> 0.3 % (standard, k = 1).",
       p4: "The data are used for non-commercial purposes only.",
       disclaimer: "Before clinical use, verify the results against the official IAEA web app. The medical physicist is responsible for the dosimetry.",
+    },
+    refs: {
+      heading: "References",
+      list: REFERENCES,
     },
   },
 };

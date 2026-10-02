@@ -170,6 +170,11 @@ legend { font-weight: 700; font-size: 0.92rem; padding: 0; margin-bottom: 8px; }
 .about p { max-width: 80ch; margin: 0 0 8px; font-size: 0.92rem; }
 .about .disclaimer { color: var(--ink); font-weight: 600; }
 
+/* литература */
+.refs { color: var(--muted); }
+.refs ol { margin: 0; padding-left: 1.4em; max-width: 90ch; font-size: 0.88rem; }
+.refs li + li { margin-top: 6px; }
+
 /* ---------- узкие экраны ---------- */
 @media (max-width: 1080px) {
   main { grid-template-columns: minmax(0, 1fr); }
